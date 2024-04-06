@@ -48,3 +48,14 @@ const Img=(prop)=>{
     )
 }
 export default Img;
+
+
+
+// const Image1=(prop)=>{
+//     return(
+//         <>
+//         <Image1 src={prop.item} width={100}/>
+//         </>
+//     )
+// }
+// export default Image1;

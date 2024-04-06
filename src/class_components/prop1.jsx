@@ -87,6 +87,7 @@
 // import Image1 from "./image1"
 
 // import ListItems from "./prop2"
+// import Image1 from "./image1"
 import Img from "./prop2"
 const ListComponent=()=>{
       const listitems=[
@@ -121,7 +122,8 @@ const ListComponent=()=>{
                             // <ListItems item={eachobject.name}/>
                             
                             <Img item={eachobject.image}/>
-                           
+                            // <Image1 item={eachobject.image}/>
+            
 
                         )
                     })

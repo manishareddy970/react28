@@ -2,6 +2,7 @@
 // import './App.css';
 import Button from './class_components/button1';
 import Counter from './class_components/counter';
+import ProductListing from './class_components/lifecycle/productlisting';
 import Count from './function_component/AandF/Counts';
 import FruVegList from './function_component/AandF/fruveglist';
 import CustomButton from './function_component/button';
@@ -111,8 +112,9 @@ function App() {
 
   {/* <CustomSpinner/> */}
 
-     <Button/>
+     {/* <Button/> */}
      {/* <Counter/> */}
+     <ProductListing/>
 
 
 </div>

@@ -12,6 +12,7 @@ import Unmount from './class_components/lifecycle/unmounting/unmount';
 import UpdatingCounter from './class_components/lifecycle/updating/updatecount';
 
 import UpdateCounter from './class_components/lifecycle/updating/updatecount';
+import Parentcompo from './class_components/purecomponent/parent';
 
 
 import Count from './function_component/AandF/Counts';
@@ -127,10 +128,12 @@ function App() {
      {/* <Counter/> */}
      {/* <ProductListing favcol={"red"}/> */}
      
-  {/* <ProductListing favcol={"red"}/> */}
+  <ProductListing favcol={"red"}/>
   {/* <UpdateCounter/> */}
   {/* <UpdatingCounter/> */}
-  <Unmount/>
+  {/* <Unmount/> */}
+
+  {/* <Parentcompo/> */}
     
 
 

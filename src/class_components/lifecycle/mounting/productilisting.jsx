@@ -173,6 +173,35 @@ class ProductListing extends Component{
         products:result.data.products
        })
     }
+
+    LowToHigh=()=>{
+        const result=this.state.products.sort((a,b)=>a.price-b.price)
+        this.setState(
+            {
+                products:result
+            }
+            
+            
+        )
+    }
+
+    HighToLow=()=>{
+        const result=this.state.products.sort((a,b)=>b.price-a.price)
+        this.setState(
+            {
+                products:result
+            }
+        )
+    }
+    Below=()=>{
+        const result=this.state.products.filter(eachobj=>eachobj.price<=500 && eachobj.price>1000)
+        this.setState(
+            {
+                products:result
+            }
+        )
+
+    }
     render(){
             //  console.log(this.state.products,"log is render")
             console.log("render")
@@ -180,6 +209,9 @@ class ProductListing extends Component{
 
             <>
             <h3 style={{color:this.state.favoriteColor}}>product listing</h3>
+            <button onClick={this.LowToHigh}>low to high</button>
+            <button onClick={this.HighToLow}>high to low</button>
+            <button onClick={this.Below}>below </button>
             {
                 this.state.products.length>0
                 ?

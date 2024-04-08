@@ -1,8 +1,19 @@
 // import logo from './logo.svg';
 // import './App.css';
 import Button from './class_components/button1';
+
 import Counter from './class_components/counter';
-import ProductListing from './class_components/lifecycle/productlisting';
+
+import ProductListing from './class_components/lifecycle/mounting/productilisting';
+import Unmount from './class_components/lifecycle/unmounting/unmount';
+
+
+
+import UpdatingCounter from './class_components/lifecycle/updating/updatecount';
+
+import UpdateCounter from './class_components/lifecycle/updating/updatecount';
+
+
 import Count from './function_component/AandF/Counts';
 import FruVegList from './function_component/AandF/fruveglist';
 import CustomButton from './function_component/button';
@@ -114,7 +125,13 @@ function App() {
 
      {/* <Button/> */}
      {/* <Counter/> */}
-     <ProductListing/>
+     {/* <ProductListing favcol={"red"}/> */}
+     
+  {/* <ProductListing favcol={"red"}/> */}
+  {/* <UpdateCounter/> */}
+  {/* <UpdatingCounter/> */}
+  <Unmount/>
+    
 
 
 </div>

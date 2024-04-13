@@ -194,7 +194,7 @@ class ProductListing extends Component{
         )
     }
     Below=()=>{
-        const result=this.state.products.filter(eachobj=>eachobj.price<=500 && eachobj.price>1000)
+        const result=this.state.products.filter(eachobj=>eachobj.price>=500 && eachobj.price<1000)
         this.setState(
             {
                 products:result

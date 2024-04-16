@@ -1,15 +1,22 @@
 
 import ProductListing from "./class_components/lifecycle/mounting/productilisting";
-import ControlledCompo2 from "./function_component/forms/controlled2";
+import UseEffectEx from "./function_component/Hooks/useFttect/useEffect";
+import UseEffectEx2 from "./function_component/Hooks/useFttect/useeffect2";
+import Fruitobj from "./function_component/alltasks/03/apr/task";
+import NewProList from "./function_component/alltasks/04/apr/task";
+
+
 
 function App() {
  return (
   <div>
-   
-   
     {/* <ProductListing/> */}
-    <ControlledCompo2/>
-
+    {/* <Fruitobj/> */}
+    {/* <NewProList/> */}
+    {/* <NewProList/> */}
+    {/* <UseEffectEx/> */}
+    <UseEffectEx2/>
+   
 </div>
   )
 }
@@ -21,6 +28,4 @@ function App() {
 //     <button>hello</button>
 //   )
 // }
-
- 
 

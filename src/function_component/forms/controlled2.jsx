@@ -5,8 +5,8 @@
 
  const ControlledCompo2=()=>{
      const[formErr,setformErr]=useState({
-         username:null,
-         password:null
+         usernameErr:null,
+         passwordErr:null
      })
      const[forms,setforms]=useState({
          username:null,
@@ -23,13 +23,13 @@
         {
            setformErr(
                {
-                   ...formErr,usernameError:"enter lessthan 6"
+                   ...formErr,usernameErr:"enter lessthan 6"
                 }
             )
          }
          else{
             setformErr({
-                ...forms,usernameError:null
+                ...forms,usernameErr:null
             })
          }
              break
@@ -37,13 +37,13 @@
              if(value.length>6){
                 setformErr(
                      {
-                       ...formErr,passwordError:"enter lessthan 6"
+                       ...formErr,passwordErr:"enter lessthan 6"
                      }
                 )
            }
            else{
             setformErr({
-                ...forms,passwordError:null
+                ...forms,passwordErr:null
             })
          }
              break;
@@ -53,6 +53,7 @@
      const submitHandler=(event)=>{
         event.preventDefault()
         console.log(forms.username)
+        console.log(forms.password)
          
     }
      return(
@@ -63,13 +64,13 @@
             value={forms.username}
             onChange={onchangehandler}
             name="username"/>
-             {formErr.usernameError &&<span style={{color:"red"}}>invalid user name</span>}
+             {formErr.usernameErr &&<span style={{color:"red"}}>invalid user name</span>}
            <label>password</label>
              <input type="password"
             value={forms.password}
          onChange={onchangehandler}
            name="password"/>
-             {formErr.passwordError &&<span style={{color:"red"}}>invalid password</span>}
+             {formErr.passwordErr &&<span style={{color:"red"}}>invalid password</span>}
             
            <button type="submit">submit</button>
              </form>

@@ -53,8 +53,7 @@
      const submitHandler=(event)=>{
         event.preventDefault()
         console.log(forms.username)
-        console.log(forms.password)
-         
+        console.log(forms.password) 
     }
      return(
          <>

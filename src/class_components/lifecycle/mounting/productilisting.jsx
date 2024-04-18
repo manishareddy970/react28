@@ -179,42 +179,50 @@ class ProductListing extends Component{
             count:this.state.count+1
         })
     }
-
-    LowToHigh=()=>{
-        const result=this.state.products.sort((a,b)=>a.price-b.price)
-        this.setState(
-            {
-                products:result
-            }  
-        )
+    
+    decrement=()=>{
+        if(this.state.count>1){
+        this.setState({
+            count:this.state.count-1
+        })
     }
+}
 
-    HighToLow=()=>{
-        const result=this.state.products.sort((a,b)=>b.price-a.price)
-        this.setState(
-            {
-                products:result
-            }
-        )
-    }
-    Below=()=>{
-        const result=this.state.products.filter(eachobj=>eachobj.price>=500 && eachobj.price<1000)
-        this.setState(
-            {
-                products:result
-            }
-        )
+    // LowToHigh=()=>{
+    //     const result=this.state.products.sort((a,b)=>a.price-b.price)
+    //     this.setState(
+    //         {
+    //             products:result
+    //         }  
+    //     )
+    // }
 
-    }
+    // HighToLow=()=>{
+    //     const result=this.state.products.sort((a,b)=>b.price-a.price)
+    //     this.setState(
+    //         {
+    //             products:result
+    //         }
+    //     )
+    // }
+    // Below=()=>{
+    //     const result=this.state.products.filter(eachobj=>eachobj.price>=500 && eachobj.price<1000)
+    //     this.setState(
+    //         {
+    //             products:result
+    //         }
+    //     )
+
+    // }
     render(){
             //  console.log(this.state.products,"log is render")
             console.log("render")
         return(
             <>
-            <h3 style={{color:this.state.favoriteColor}}>product listing</h3>
-            <button onClick={this.LowToHigh}>low to high</button>
+            {/* <h3 style={{color:this.state.favoriteColor}}>product listing</h3> */}
+            {/* <button onClick={this.LowToHigh}>low to high</button>
             <button onClick={this.HighToLow}>high to low</button>
-            <button onClick={this.Below}>below </button>
+            <button onClick={this.Below}>below </button> */}
                 {
                 this.state.products.length>0
                 ?
@@ -228,11 +236,10 @@ class ProductListing extends Component{
                               <h4>{description}</h4>
                               <img src={thumbnail}  alt={title} width={200}  height={200}/>
                               <h5 style={{color:"red"}}>{price}</h5>
-                              <h3>{this.state.count}</h3>
-                              <button onClick={this.increment}>count</button>
-                              <button>+</button>
-                              <button>-</button>
-                            
+                              <h3>count:{this.state.count}</h3>
+                              <button onClick={this.increment}>+</button>
+                              <button onClick={this.decrement}>-</button>
+                              <button style={{display:"block",marginLeft:160}}>AddToCart</button>
                               </div>
                         )   
                 })

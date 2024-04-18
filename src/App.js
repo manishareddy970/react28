@@ -1,21 +1,19 @@
-
-import ProductListing from "./class_components/lifecycle/mounting/productilisting";
-import UseEffectEx from "./function_component/Hooks/useFttect/useEffect";
-import UseEffectEx2 from "./function_component/Hooks/useFttect/useeffect2";
-import Fruitobj from "./function_component/alltasks/03/apr/task";
-import NewProList from "./function_component/alltasks/04/apr/task";
+import AxiosLoginHit from "./function_component/apihitting/AxiosHit";
+import LoginApi from "./function_component/apihitting/loginapihit";
+import ControlledCompo2 from "./function_component/forms/controlled2";
+import NavigationStack from "./function_component/react-navigation/navigation-stack";
 
 
 
 function App() {
  return (
   <div>
-    {/* <ProductListing/> */}
-    {/* <Fruitobj/> */}
-    {/* <NewProList/> */}
-    {/* <NewProList/> */}
-    {/* <UseEffectEx/> */}
-    <UseEffectEx2/>
+    {/* <UseEffectEx2/> */}
+    {/* <AxiosLoginHit/> */}
+    {/* <LoginApi/> */}
+    {/* <ControlledCompo2/> */}
+    <NavigationStack/>
+    
    
 </div>
   )

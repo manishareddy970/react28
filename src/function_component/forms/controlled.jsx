@@ -7,7 +7,6 @@ const ControlledCompo=()=>{
     const [usernameError,setusernameError]=useState(null)
     const [passwordError,setpasswordError]=useState(null)
 
-
     const usernameHandler=(event)=>{
         const username=event.target.value
         console.log(username)
@@ -15,13 +14,11 @@ const ControlledCompo=()=>{
         if(username.trim().length>6){
             // alert("input must be length 6")
             setusernameError("input must be length 6")
-
          }
          else{
           setusernameError(null)
         }
         //  console.log(username)
-
     }
     const passwordHandler=(event)=>{
         const password=event.target.value
@@ -33,12 +30,12 @@ const ControlledCompo=()=>{
         else{
             setpasswordError(null)
         }
-
     }
     const submitHandler=(event)=>{
         event.preventDefault()
-        // console.log(username)
-        // console.log(password)
+        console.log(username)
+        console.log(password)
+
         const userdetails={
             username:username,
             password:password,
@@ -46,9 +43,6 @@ const ControlledCompo=()=>{
         }
         console.log(userdetails)
     }
-
-    
-
     return(
         <>
         <form onSubmit={submitHandler}>
@@ -62,10 +56,14 @@ const ControlledCompo=()=>{
             value={password}
             onChange={passwordHandler}/>
              {passwordError &&<span style={{color:"red"}}>invalid password</span>}
-            
+             <table style={{border:"1px solid"}}>
+                <tr>
+                <td style={{border:"1px solid"}}>{username}</td> 
+                <td>{password}</td>
+                </tr>
+            </table>
             <button type="submit">submit</button>
             </form>
-       
         </>
     )
 }

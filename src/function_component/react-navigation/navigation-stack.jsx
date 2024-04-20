@@ -29,12 +29,35 @@ import Contact from "./pages/contact-screen"
 import InvalidScreen from "./pages/invalid-screen"
 import ProDetail from "./pages/product-detail"
 import LoginScreen from "./pages/login-screen"
-import { useState } from "react"
+import { createContext, useState } from "react"
 
+ 
+//global management....
+ export const DataShare=createContext()               //step:1
 
 const NavigationStack=()=>{
-    const[login,setlogin]=useState(false)
+    const[login,setlogin]=useState(true)
+    const[data,setdata]=useState(
+      {name:"manisha",
+      city:"hyderbad",
+      isIndian:true,
+      count:10,
+      mobile:9701443560}
+    )
+
+    const ChangeData=()=>{
+      // setdata({...data,name:"radika"})
+      setdata({...data,count:data.count+1})
+    }
+
+
     return(
+      <DataShare.Provider value={{
+        // data:data,
+        // ChangeData:ChangeData
+        data,
+        ChangeData
+      }}>         
        <BrowserRouter>
        {
         login
@@ -51,6 +74,7 @@ const NavigationStack=()=>{
        </Routes>
      }
        </BrowserRouter>
+       </DataShare.Provider>
        
     )
 }

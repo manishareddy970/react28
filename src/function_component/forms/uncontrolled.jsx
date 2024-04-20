@@ -1,18 +1,21 @@
 import { useRef, useState } from "react";
 
 
-const UnControlledCompo=()=>{
+   const UnControlledCompo=()=>{
    const usernameRef=useRef("")
    const passwordRef=useRef("")
-   const [errorvisible,seterrorvisible]=useState(false)
+
+    const [errorvisible,seterrorvisible]=useState(false)
 
    const Handler=(event)=>{
        event.preventDefault()
-      console.log("submitted")
-
+      // console.log("submitted")
+      
       const userInput=usernameRef.current.value
+      console.log(userInput)
+  
       const passwordInput=passwordRef.current.value
-     
+      console.log(passwordInput)
 
 
    if(userInput.length<5 && passwordInput.length<5){
@@ -26,7 +29,6 @@ const UnControlledCompo=()=>{
    }
    return(
     <>
-    
     <form onSubmit={Handler} >
       <label>username</label>
       <input type="text"
@@ -36,9 +38,10 @@ const UnControlledCompo=()=>{
       ref={passwordRef}/>
       {errorvisible && <span style={{color:"red"}}>username and password must be morethan 5 characters</span>}
       <button type="submit">submit</button>
+     
+    
     </form>
     </>
    )
-
 }
 export default UnControlledCompo;

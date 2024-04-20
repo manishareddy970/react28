@@ -1,13 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductListing from "../../../class_components/lifecycle/mounting/productilisting";
 import Header from "../components/header";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { DataShare } from "../navigation-stack";
+import UseEffectEx from "../../Hooks/useeffect";
+import UseReducerEx from "../../Hooks/usereducerex";
 
 
 const Home=()=>{
     const[products,setproducts]=useState([])
+//    const Response= useContext(DataShare)                  step:5
+// const {name}= useContext(DataShare)  
 
+const {data,ChangeData}=useContext(DataShare)       
+   
+   console.log(Response)
     useEffect(()=>{
         FetchProducts()
     },[])
@@ -29,12 +37,17 @@ const Home=()=>{
     }
     return(
           <>
-        
          <Header/>
          {/* <ProductListing/> */}
-         <h4>Welcome to homescreen</h4>
+         {/* <h4>Welcome to homescreen {Response.name}</h4>         //step 5 */}
+         {/* <h4>Welcome to homescreen {name}</h4> */}
+        
+         <UseEffectEx/>
+         <h3>UseContext example:</h3>
+         <h4>Welcome to homescreen {data.count}</h4>
+          <button onClick={ChangeData}>click to increase count</button>
+          <UseReducerEx/>
          {
-            
            products.length>0
            ?
            <>
@@ -67,3 +80,4 @@ const Home=()=>{
     )
 }
 export default Home;
+

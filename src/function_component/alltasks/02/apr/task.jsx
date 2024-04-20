@@ -3,7 +3,7 @@
 import { Component } from "react";
 //adding fruit...
 
-
+ //crud on using array 
 // class Fruits extends Component{
 //     state={
 //         fruitsss:["apple","banana"]

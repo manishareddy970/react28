@@ -1,6 +1,8 @@
+
+
 import { useState } from "react";
 
-const UseStateEx3=()=>{
+const TimerStart=()=>{
     const[timer,setTimer]=useState(20)
     const startTimer=()=>{
         setInterval(()=>{
@@ -15,7 +17,7 @@ const UseStateEx3=()=>{
     }
     return(
         <div>
-            <h3>usestate ex3</h3>
+            <h3>TimerStart</h3>
             <button onClick={startTimer}>start timer</button>
             <h3 style={{
                 color:timer<=10?"red":"green"
@@ -27,4 +29,4 @@ const UseStateEx3=()=>{
         </div>
     )
 }
-export default UseStateEx3;
+export default TimerStart;

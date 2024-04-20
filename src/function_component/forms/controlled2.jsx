@@ -12,6 +12,8 @@
          username:null,
          password:null,
     })
+
+    const[userdetails,setuserdetails]=useState("")
      const onchangehandler=(event)=>{
         const{value,name}=event.target
          // console.log(value,name)
@@ -54,6 +56,15 @@
         event.preventDefault()
         console.log(forms.username)
         console.log(forms.password) 
+
+        const userdetails={
+            username:forms.username,
+            password:forms.password,
+            id:Math.random()
+        }
+        console.log(userdetails)
+        setuserdetails(userdetails)
+        
     }
      return(
          <>
@@ -70,8 +81,17 @@
          onChange={onchangehandler}
            name="password"/>
              {formErr.passwordErr &&<span style={{color:"red"}}>invalid password</span>}
-            
            <button type="submit">submit</button>
+            
+            <table style={{border:"1px solid"}}>
+                <tr>
+                    <td style={{border:"1px solid"}}>{userdetails.username}</td>
+                    <td>{userdetails.password}</td>
+                </tr>
+           
+            </table>
+           
+           
              </form>
        
          </>

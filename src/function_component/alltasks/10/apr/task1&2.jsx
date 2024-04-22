@@ -22,17 +22,12 @@ const UnControlled=()=>{
        console.log(PasswordInput)
        setPasswordInput(PasswordInput)
        
-
        if(UserInput.length<5 && PasswordInput.length<5){
         seterrorvisible(true)
        }
        else{
         seterrorvisible(false)
        }
-         
-
-       
-        
     }
     return(
         <>

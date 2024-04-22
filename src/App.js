@@ -1,7 +1,9 @@
-import UseStateEx3 from "./function_component/Hooks/usestate-ex3";
-import ProductsData from "./function_component/alltasks/06/apr/task";
-import TimerStart from "./function_component/alltasks/08/apr/task";
-import UnControlled from "./function_component/alltasks/10/apr/task1&2";
+import { Navigate } from "react-router-dom";
+import Routing from "./function_component/alltasks/15/apr/task";
+import Navigates from "./function_component/alltasks/15/apr/apr/navigate";
+import ProductListing from "./class_components/lifecycle/mounting/productilisting";
+
+
 
 
 
@@ -11,9 +13,11 @@ function App() {
   <div>
    
   
-  {/* <TimerStart/> */}
-  <UnControlled/>
-   
+ {/* <Routing/> */}
+<Navigates/>
+{/* < ProductListing/> */}
+  
+
 </div>
   )
 }

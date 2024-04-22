@@ -4,6 +4,7 @@
 // import InvalidScreen from "./pages/invalid-screen"
 
 // //static navigation....
+
 // const NavigationStack=()=>{
 //     return(
 //        <BrowserRouter>

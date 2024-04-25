@@ -3,7 +3,6 @@ import Header from "../../../react-navigation/components/header";
 import { DataShare } from "../../../react-navigation/navigation-stack";
 import { Data } from "../../15/apr/apr/navigate";
 
-
 const CartScreen=()=>{
     // const {CartItems}=useContext(DataShare)
     const{CartItems, removeCartItems} =useContext(Data)
@@ -32,4 +31,4 @@ const CartScreen=()=>{
           </>
     )
 }
-export default CartScreen;
+export default CartScreen

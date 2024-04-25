@@ -12,15 +12,11 @@
 //         <Route path="/" Component={Home}/>
 //         <Route path="/contact" Component={Contact}/>
 //         <Route path="*" Component={InvalidScreen}/>
-
-
 //        </Routes>
 //        </BrowserRouter>
-       
 //     )
 // }
 // export default NavigationStack;
-
 
 //dynamic navigation...
 
@@ -32,25 +28,25 @@ import ProDetail from "./pages/product-detail"
 import LoginScreen from "./pages/login-screen"
 import { createContext, useState } from "react"
 
- 
 //global management....
  export const DataShare=createContext()               //step:1
 
-const NavigationStack=()=>{
+    const NavigationStack=()=>{
     const[login,setlogin]=useState(true)
     const[data,setdata]=useState(
       {name:"manisha",
       city:"hyderbad",
       isIndian:true,
       count:10,
-      mobile:9701443560}
+      mobile:9701443560,
+     color:"black"
+      }
     )
-
     const ChangeData=()=>{
       // setdata({...data,name:"radika"})
-      setdata({...data,count:data.count+1})
+      // setdata({...data,count:data.count+1})
+      setdata({...data,color:"red"})
     }
-
 
     return(
       <DataShare.Provider value={{
@@ -59,8 +55,8 @@ const NavigationStack=()=>{
         data,
         ChangeData
       }}>         
-       <BrowserRouter>
-       {
+        <BrowserRouter>
+        {
         login
         ?
        <Routes>
@@ -68,15 +64,14 @@ const NavigationStack=()=>{
         <Route path="/contact" Component={Contact}/>
         <Route path="*" Component={InvalidScreen}/>
         <Route path=":brand/:productid" Component={ProDetail}/>
-       </Routes>
-       :
-       <Routes>
+        </Routes>
+        :
+        <Routes>
         <Route path="/" Component={LoginScreen}/>
        </Routes>
      }
        </BrowserRouter>
-       </DataShare.Provider>
-       
+       </DataShare.Provider>  
     )
-}
-export default NavigationStack;
+    }
+   export default NavigationStack;

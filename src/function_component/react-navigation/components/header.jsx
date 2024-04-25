@@ -8,7 +8,7 @@ import { Data } from "../../alltasks/15/apr/apr/navigate";
 const Header=()=>{
   // const {city}=useContext(DataShare)
     // const {data}=useContext(DataShare)
-    const{CartItems} =useContext(Data)
+    // const{CartItems} =useContext(Data)
     return(
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
         <div className="container-fluid">
@@ -24,11 +24,11 @@ const Header=()=>{
               {/* <a className="nav-link" href="#">
                 Link
               </a> */}
-              {/* <Link to={"/contact"} style={{textDecoration:"none",color:"black"}}>Contact</Link> */}
+              <Link to={"/contact"} style={{textDecoration:"none",color:"black"}}>Contact</Link>
 
-            </li>
+             </li>
             <li className="nav-item" style={{margin:20}}>
-            <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>Cart {CartItems.length}</Link>
+            {/* <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>Cart {CartItems.length}</Link> */}
             </li>
 
             <li className="nav-item">

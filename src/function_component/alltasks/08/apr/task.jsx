@@ -7,13 +7,7 @@ const TimerStart=()=>{
     const startTimer=()=>{
         setInterval(()=>{
                  setTimer(pretimer=>pretimer-1)
-                 if(timer===0) {
-                    clearInterval(startTimer)
-                    timer--;
-                   }
-                 
         },1000)
-      
     }
     return(
         <div>
@@ -25,7 +19,6 @@ const TimerStart=()=>{
             {
                 timer<=10 && <h3>exam about to end</h3>
             }
-
         </div>
     )
 }

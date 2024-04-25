@@ -13,7 +13,8 @@ const Home=()=>{
 //    const Response= useContext(DataShare)                  step:5
 // const {name}= useContext(DataShare)  
 
-const {data,ChangeData}=useContext(DataShare)       
+const {data,ChangeData}=useContext(DataShare)  
+console.log(data);     
    
    console.log(Response)
     useEffect(()=>{
@@ -41,11 +42,12 @@ const {data,ChangeData}=useContext(DataShare)
          {/* <ProductListing/> */}
          {/* <h4>Welcome to homescreen {Response.name}</h4>         //step 5 */}
          {/* <h4>Welcome to homescreen {name}</h4> */}
-        
+         <h3 style={{border:"1px solid black",width:"200px",height:"200px",marginLeft:"700px",backgroundColor:data.color}}></h3>
+         <button onClick={ChangeData}>click to change color</button>
          <UseEffectEx/>
          <h3>UseContext example:</h3>
-         <h4>Welcome to homescreen {data.count}</h4>
-          <button onClick={ChangeData}>click to increase count</button>
+         {/* <h4>Welcome to homescreen {data.count}</h4>
+          <button onClick={ChangeData}>click to increase count</button> */}
           <UseReducerEx/>
          {
            products.length>0

@@ -17,17 +17,20 @@ const UnControlled=()=>{
        const UserInput=username.current.value
        console.log(UserInput)
        setuserInput(UserInput)
-
+          
+    
        const PasswordInput=password.current.value
        console.log(PasswordInput)
        setPasswordInput(PasswordInput)
-       
+
        if(UserInput.length<5 && PasswordInput.length<5){
         seterrorvisible(true)
        }
        else{
         seterrorvisible(false)
        }
+       username.current.value=""
+       password.current.value=""
     }
     return(
         <>

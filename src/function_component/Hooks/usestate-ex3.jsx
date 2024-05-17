@@ -5,11 +5,6 @@ const UseStateEx3=()=>{
     const startTimer=()=>{
         setInterval(()=>{
                  setTimer(pretimer=>pretimer-1)
-                 if(timer===0) {
-                    clearInterval(startTimer)
-                    timer--;
-                   }
-                 
         },1000)
       
     }

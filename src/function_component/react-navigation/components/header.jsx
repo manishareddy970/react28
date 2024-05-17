@@ -1,14 +1,14 @@
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
-import { DataShare } from "../navigation-stack";
-import { Data } from "../../alltasks/15/apr/apr/navigate";
+
+
 
 
 
 const Header=()=>{
   // const {city}=useContext(DataShare)
     // const {data}=useContext(DataShare)
-    // const{CartItems} =useContext(Data)
+     
     return(
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
         <div className="container-fluid">
@@ -16,6 +16,7 @@ const Header=()=>{
             <li className="nav-item" style={{margin:20}}>
 
               <Link to={"/"} style={{textDecoration:"none",color:"black"}}>HOME</Link>
+
             </li>
             <li className="nav-item" style={{margin:20}}>
 
@@ -28,7 +29,7 @@ const Header=()=>{
 
              </li>
             <li className="nav-item" style={{margin:20}}>
-            {/* <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>Cart {CartItems.length}</Link> */}
+            {/* <Link to={"/cart"} style={{textDecoration:"none",color:"black"}}>cart</Link> */}
             </li>
 
             <li className="nav-item">

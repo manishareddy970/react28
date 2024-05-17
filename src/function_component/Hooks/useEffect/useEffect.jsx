@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 
 
 
-const UseEffectEx=()=>{
+const UseEffectEx1=()=>{
     const [prolist,setprolist]=useState([])
     const[count,setcount]=useState(1)
+    
     useEffect(()=>{
         console.log("useeffect rendering....")
         AxiosData()
@@ -21,8 +22,6 @@ const UseEffectEx=()=>{
         setcount(count+1)
     }
    
-       
-
     // useEffect(()=>{
     //     console.log("useeffect rendering....")
     //     AxiosData()
@@ -58,6 +57,19 @@ const UseEffectEx=()=>{
    
     return(
         <>
+        {
+            prolist.map((eachpro)=>{
+                const {brand,title,price}=eachpro;
+                return(
+                    <>
+                    <h3>{brand}</h3>
+                    <h3>{title}</h3>
+                    <h3>{price}</h3>
+
+                    </>
+                )
+            })
+        }
         <h3>useeffect example</h3>
         <h3>{count}</h3>
         <button onClick={increment}>count</button>
@@ -65,4 +77,4 @@ const UseEffectEx=()=>{
 
     )
 }
-export default UseEffectEx;
+export default UseEffectEx1;

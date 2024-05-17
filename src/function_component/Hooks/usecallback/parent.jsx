@@ -35,8 +35,9 @@ const UseCallbackEx=()=>{
       <h3>age:{age}</h3>
       <h3>salary:{salary}</h3>
 
-      <CustomButton title="increment age" handleClick={incrementage}/>
-      <CustomButton title="increment salary" handleClick={incrementsalary}/>
+      {/* <CustomButton title="increment age" handleClick={incrementage}/>
+      <CustomButton title="increment salary" handleClick={incrementsalary}/> */}
+      <button onClick={incrementage}>age</button>
 
     </>
     )

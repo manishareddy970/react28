@@ -6,17 +6,19 @@ import { Link } from "react-router-dom";
 import { DataShare } from "../navigation-stack";
 import UseEffectEx from "../../Hooks/useeffect";
 import UseReducerEx from "../../Hooks/usereducerex";
+import { cartData } from "../../alltasks/15/apr/apr/navigate";
 
 
 const Home=()=>{
+      const{AddCartItems}=useContext(cartData)
     const[products,setproducts]=useState([])
 //    const Response= useContext(DataShare)                  step:5
 // const {name}= useContext(DataShare)  
 
-const {data,ChangeData}=useContext(DataShare)  
-console.log(data);     
+// const {data,ChangeData}=useContext(DataShare)  
+// console.log(data);     
    
-   console.log(Response)
+//    console.log(Response)
     useEffect(()=>{
         FetchProducts()
     },[])
@@ -38,12 +40,12 @@ console.log(data);
     }
     return(
           <>
-         <Header/>
+         {/* <Header/> */}
          {/* <ProductListing/> */}
          {/* <h4>Welcome to homescreen {Response.name}</h4>         //step 5 */}
          {/* <h4>Welcome to homescreen {name}</h4> */}
-         <h3 style={{border:"1px solid black",width:"200px",height:"200px",marginLeft:"700px",backgroundColor:data.color}}></h3>
-         <button onClick={ChangeData}>click to change color</button>
+         {/* <h3 style={{border:"1px solid black",width:"200px",height:"200px",marginLeft:"700px",backgroundColor:data.color}}></h3> */}
+         {/* <button onClick={ChangeData}>click to change color</button> */}
          <UseEffectEx/>
          <h3>UseContext example:</h3>
          {/* <h4>Welcome to homescreen {data.count}</h4>
@@ -69,6 +71,8 @@ console.log(data);
                         click to see product
                         </Link>
                     </button>
+
+                    <button onClick={()=>AddCartItems(eachproduct)}>addto cart</button>
                     </>
                 )
             })

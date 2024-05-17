@@ -1,47 +1,44 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SeeData from "./prodetails";
-import Routing from "../task";
-import CartScreen from "../../../16/apr/cartscreen";
 import { createContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../../../../react-navigation/pages/home-screen";
+import CartScreen from "../../../16/apr/cartscreen";
+import Header from "../../../../react-navigation/components/header";
 
+ 
 
+ export const cartData=createContext()
 
-    
-//    export const DataShare=createContext()
-    export const Data=createContext()
-   const Navigates=()=>{
+const Navigation=()=>{
+      const [cartItems,setcartItems]=useState([])
+
+      const AddCartItems=(eachitem)=>{
+        setcartItems([...cartItems,eachitem])
+
+      }
+      // const RemoveCartItems=(id)=>{
+      //   cartItems.filter((eachitem,i)=>i==id)
+      //   setcartItems({cartItems})
+      // }
+  return(
+    <>
+
+    <Header/>
+    <cartData.Provider value={
+      { cartItems,
+        AddCartItems,
+        // RemoveCartItems
+      }
       
-       const[CartItems,setCartItems]=useState([])
-
-       const AddCartItems=(eachitem)=>{
-             setCartItems([...CartItems,eachitem])
-       }
-
-       const removeCartItems=(id)=>{
-              setCartItems([CartItems.filter((eachitem)=>eachitem!==id)] )
-               }
-
-
-       
-    return(
-       //    <DataShare.Provider value={{CartItems}}>
-       <Data.Provider value={{
-              CartItems,
-              AddCartItems,
-              removeCartItems
-       
-             }}>
-           <BrowserRouter>
-           <Routes>
-            <Route path="/" Component={Routing}/>
-            <Route path=":brand/:productid" Component={SeeData}/>
+      }>
+          <BrowserRouter>
+          <Routes>
+            <Route path="/" Component={Home}/>
             <Route path="/cart" Component={CartScreen}/>
-           </Routes>
-           </BrowserRouter>
-       {/* //     </DataShare.Provider> */}
-      </Data.Provider>
-
-
-    )
-   }
-   export default Navigates;
+          </Routes>
+          </BrowserRouter>
+    </cartData.Provider>
+    </>
+        
+  )
+}
+export default Navigation;

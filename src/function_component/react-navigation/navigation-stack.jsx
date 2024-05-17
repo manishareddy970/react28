@@ -25,8 +25,8 @@ import Home from "./pages/home-screen"
 import Contact from "./pages/contact-screen"
 import InvalidScreen from "./pages/invalid-screen"
 import ProDetail from "./pages/product-detail"
-import LoginScreen from "./pages/login-screen"
 import { createContext, useState } from "react"
+import LoginScreen from "./pages/login-screen"
 
 //global management....
  export const DataShare=createContext()               //step:1

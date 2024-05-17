@@ -38,8 +38,6 @@ import { useRef, useState } from "react";
       ref={passwordRef}/>
       {errorvisible && <span style={{color:"red"}}>username and password must be morethan 5 characters</span>}
       <button type="submit">submit</button>
-     
-    
     </form>
     </>
    )
